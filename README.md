@@ -1,64 +1,62 @@
 🛡️ AEGIS COGNITION
 Parental Control & Screen-Time Manager – Chrome Extension
 
-Aegis Cognition is a powerful yet privacy-respecting Chrome extension that helps parents and individuals:
+Aegis Cognition helps parents and individuals:
 
 ⏱️ limit daily screen-time
 
-🚫 automatically block distracting / harmful sites
+🚫 block distracting or harmful websites
 
-🔐 require password for overrides and settings
+🔐 require password for overrides and changes
 
 👶 enable kid-safe browsing mode
 
-🛡️ filter adult content with keywords & domains
+🛡️ filter adult content (keywords & domains)
 
-Built entirely using Chrome Manifest V3 with no external servers or data collection.
+Built using Chrome Manifest V3 — no servers, no tracking, fully local.
 
 ⭐ FEATURES
 ⏱️ Smart Time Tracking
 
-tracks active time per domain
+tracks active time per website
 
-resets automatically every day
+works across multiple tabs
 
-works across tabs & windows
+resets automatically each day
 
-data stored locally only
+data saved locally only
 
 🚫 Screen-Time Limits
 
 default = no limit (infinite)
 
-parent can set daily limits
+set global or per-site limits
 
-optional per-site limits
-
-site is blocked when time finishes
+site blocked automatically when limit is reached
 
 🔐 Password-Protected Override
 
-When a website is blocked:
+When a site is blocked:
 
-user sees the blocked screen
+user sees blocked screen
 
-password is required to continue
+must enter password to continue
 
-domain is temporarily whitelisted
+domain temporarily whitelisted
 
-🛡️ Adult Content Filtering
+🛡️ Adult Content Blocking
 
-Block based on:
+Supports:
 
-❌ domains (ex: pornhub.com)
+domain blocking
 
-❌ keywords (ex: xxx, nsfw)
+keyword blocking
 
-editable lists
+customizable lists
 
 🔒 Secure Settings
 
-Password required to:
+Password is required to:
 
 change limits
 
@@ -66,9 +64,9 @@ edit blocked sites
 
 edit blocked keywords
 
-toggle kid mode
+enable kid-mode
 
-Settings can be viewed without password, but cannot be changed without password.
+Settings can be viewed without password, but not modified without password.
 
 👶 Kid Mode
 
@@ -76,29 +74,26 @@ Optional:
 
 prevents casual tampering
 
-keeps override password protected
+retains override protection
 
-blocks sensitive sites
+improves safety for children
 
 🛠️ TECHNOLOGY STACK
 
-✅ JavaScript (ES6)
+JavaScript (ES6)
 
-✅ Chrome Extensions API — Manifest V3
+Chrome Extension API — Manifest V3
 
-✅ Background Service Worker
+Background Service Worker
 
-✅ Content Scripts
+Content Scripts
 
-✅ HTML / CSS
+HTML / CSS
 
-✅ Chrome Storage API
-
-No backend. No frameworks. No telemetry.
+Chrome Storage API
 
 📂 PROJECT STRUCTURE
 aegis-cognition/
-│
 ├── manifest.json
 ├── background.js
 ├── popup.html / popup.js
@@ -108,11 +103,11 @@ aegis-cognition/
 └── icons/ (optional)
 
 🚀 INSTALLATION
-🔧 Local Developer Install
+🔧 Local Install (Developer Mode)
 
-Download or clone this repo
+Download or clone this repository
 
-Open Chrome and navigate to:
+Open Chrome and go to:
 
 chrome://extensions
 
@@ -123,92 +118,79 @@ Click Load unpacked
 
 Select the project folder
 
-You will now see the extension in the toolbar 🎉
+Your extension will now appear in the toolbar 🎉
 
 📘 USAGE GUIDE
-🟢 Step 1 — Set Parent Password
+🟢 Set Parent Password
 
-Open popup → Settings → Set password
+Popup → Settings → Set Password
 
-🔵 Step 2 — Configure Time Limits
+🔵 Configure Time Limits
 
-set minutes per day
+enter minutes
 
-attempting to save will require password
+saving requires password
 
-🟣 Step 3 — Customize Blocked Sites
+🟣 Block Sites / Keywords
 
-Domains example:
+Examples:
 
 youtube.com
 instagram.com
 reddit.com
 
-
-Keywords example:
-
 porn
 xxx
 nsfw
 
-🔴 Step 4 — When Time Runs Out
+🔴 When Time Runs Out
 
-page is blocked
+website is blocked
 
 password required to continue
 
-🔐 PRIVACY POLICY
+🔐 PRIVACY
 
-Your data never leaves your browser.
+❌ no data collection
 
-❌ no remote servers
+❌ no server communication
 
 ❌ no analytics
 
-❌ no tracking
-
-✔ stored locally using chrome.storage.local
-
-Password is local (hashing planned in roadmap).
+✔ stored locally (chrome.storage.local)
 
 🧠 IMPLEMENTATION NOTES
 
 This project demonstrates:
 
-Manifest V3 architecture
+Manifest V3 service workers
 
-async event-driven service workers
+async event lifecycle
 
-secure override design UX
+secure override flow
 
 per-domain time tracking
 
-safe content interception
+content filtering system
 
-Chrome storage synchronization
-
-This is excellent interview discussion material.
+Chrome storage syncing
 
 ⚠️ KNOWN LIMITATIONS
 
-password currently stored unhashed
+password stored unhashed (upgrade planned)
 
-cannot prevent uninstalling extension
+cannot prevent uninstalling the extension
 
-not synced across devices (yet)
-
-some adult content may evade keyword filters
+cloud sync not yet implemented
 
 🗺️ ROADMAP
 
-🔑 hash + salt password
+🔑 hashed & salted password
 
-☁️ cloud sync across devices
+☁️ multi-device cloud sync
 
-📊 usage charts / analytics dashboard
+📊 detailed usage dashboard
 
-🧒 full hard-lock kid mode
+👶 stricter kid-lock mode
 
 🌙 incognito support
-
-🛍 publish on Chrome Web Store
