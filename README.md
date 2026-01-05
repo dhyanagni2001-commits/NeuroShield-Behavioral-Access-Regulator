@@ -1,196 +1,89 @@
 🛡️ AEGIS COGNITION
-Parental Control & Screen-Time Manager – Chrome Extension
+Parental Control & Screen-Time Manager (Chrome Extension)
 
-Aegis Cognition helps parents and individuals:
+Aegis Cognition is a Chrome extension that helps you:
 
-⏱️ limit daily screen-time
+limit daily screen-time
 
-🚫 block distracting or harmful websites
+block distracting websites
 
-🔐 require password for overrides and changes
+filter adult content
 
-👶 enable kid-safe browsing mode
+use password-protected overrides
 
-🛡️ filter adult content (keywords & domains)
+enable kid-safe browsing
 
-Built using Chrome Manifest V3 — no servers, no tracking, fully local.
+It is built using Chrome Manifest V3.
+There are no servers, no tracking, and all data stays on your device.
 
-⭐ FEATURES
-⏱️ Smart Time Tracking
+⭐ Features
 
-tracks active time per website
+per-website time tracking
 
-works across multiple tabs
+daily usage limits
 
-resets automatically each day
+automatic blocking when time is finished
 
-data saved locally only
+password required to override block
 
-🚫 Screen-Time Limits
+blocked domain list
 
-default = no limit (infinite)
+blocked keyword list
 
-set global or per-site limits
+optional kid-mode
 
-site blocked automatically when limit is reached
+all data stored locally in Chrome
 
-🔐 Password-Protected Override
+🛠️ Tech Stack
 
-When a site is blocked:
-
-user sees blocked screen
-
-must enter password to continue
-
-domain temporarily whitelisted
-
-🛡️ Adult Content Blocking
-
-Supports:
-
-domain blocking
-
-keyword blocking
-
-customizable lists
-
-🔒 Secure Settings
-
-Password is required to:
-
-change limits
-
-edit blocked sites
-
-edit blocked keywords
-
-enable kid-mode
-
-Settings can be viewed without password, but not modified without password.
-
-👶 Kid Mode
-
-Optional:
-
-prevents casual tampering
-
-retains override protection
-
-improves safety for children
-
-🛠️ TECHNOLOGY STACK
-
-JavaScript (ES6)
-
-Chrome Extension API — Manifest V3
-
-Background Service Worker
-
-Content Scripts
+JavaScript
 
 HTML / CSS
 
+Chrome Extension API — Manifest V3
+
+Background service worker
+
+Content Scripts
+
 Chrome Storage API
 
-📂 PROJECT STRUCTURE
-aegis-cognition/
-├── manifest.json
-├── background.js
-├── popup.html / popup.js
-├── options.html / options.js
-├── blocked.html / blocked.js
-├── filter.js
-└── icons/ (optional)
+🚀 How to Install
 
-🚀 INSTALLATION
-🔧 Local Install (Developer Mode)
+Download or clone this project
 
-Download or clone this repository
+Open Chrome and go to chrome://extensions
 
-Open Chrome and go to:
-
-chrome://extensions
-
-
-Enable Developer Mode
+Turn on Developer Mode
 
 Click Load unpacked
 
-Select the project folder
+Select this project folder
 
-Your extension will now appear in the toolbar 🎉
+📘 How to Use
 
-📘 USAGE GUIDE
-🟢 Set Parent Password
+open popup → Settings
 
-Popup → Settings → Set Password
+set parent password
 
-🔵 Configure Time Limits
+set daily time limit
 
-enter minutes
+add blocked domains
 
-saving requires password
+add blocked keywords
 
-🟣 Block Sites / Keywords
+when limit is reached → password is required to continue
 
-Examples:
+🔐 Privacy
 
-youtube.com
-instagram.com
-reddit.com
+no data collection
 
-porn
-xxx
-nsfw
+no cloud storage
 
-🔴 When Time Runs Out
+no analytics
 
-website is blocked
+everything is stored only on your device
 
-password required to continue
+💼 Resume Summary
 
-🔐 PRIVACY
-
-❌ no data collection
-
-❌ no server communication
-
-❌ no analytics
-
-✔ stored locally (chrome.storage.local)
-
-🧠 IMPLEMENTATION NOTES
-
-This project demonstrates:
-
-Manifest V3 service workers
-
-async event lifecycle
-
-secure override flow
-
-per-domain time tracking
-
-content filtering system
-
-Chrome storage syncing
-
-⚠️ KNOWN LIMITATIONS
-
-password stored unhashed (upgrade planned)
-
-cannot prevent uninstalling the extension
-
-cloud sync not yet implemented
-
-🗺️ ROADMAP
-
-🔑 hashed & salted password
-
-☁️ multi-device cloud sync
-
-📊 detailed usage dashboard
-
-👶 stricter kid-lock mode
-
-🌙 incognito support
+Chrome extension for parental control and screen-time management. Implements time tracking, blocking, adult-content filtering, password-protected overrides, and secure settings using Manifest V3 — with 100% local storage and zero tracking.
