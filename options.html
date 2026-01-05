@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aegis Cognition – Settings</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.5fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      border: 1px solid #111827;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.4);
+    }
+
+    .card h2 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    label {
+      font-size: 13px;
+      display: block;
+      margin-bottom: 6px;
+      color: #d1d5db;
+    }
+
+    input[type="number"],
+    input[type="password"],
+    textarea {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      background: #020617;
+      color: #e5e7eb;
+      padding: 8px 10px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    input[type="number"]:focus,
+    input[type="password"]:focus,
+    textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 1px #2563eb55;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+      font-family: inherit;
+    }
+
+    .row-inline {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .row-inline input[type="number"] {
+      max-width: 120px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    button.secondary {
+      background: #111827;
+      color: #e5e7eb;
+    }
+
+    button.secondary:hover {
+      background: #1f2937;
+    }
+
+    .switch-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+
+    .switch-row span {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #34d399;
+      min-height: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #111827;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Aegis Cognition Settings</h1>
+    <div class="subtitle">
+      Configure screen-time limits, blocked sites, and parent password.
+    </div>
+
+    <!-- TIME LIMIT + KID MODE -->
+    <div class="card">
+      <div class="grid">
+        <div>
+          <h2>Daily Time Limit</h2>
+          <p>
+            Set a global daily limit for social media. Leave empty for <b>infinite time</b>.
+          </p>
+
+          <label for="limitInput">Limit (minutes)</label>
+          <div class="row-inline">
+            <input id="limitInput" type="number" min="1" placeholder="e.g. 30">
+            <button id="saveLimit">Save limit</button>
+          </div>
+
+          <div style="margin-top:8px;font-size:11px;color:#6b7280;">
+            Time limit changes require the parent password.
+          </div>
+        </div>
+
+        <div>
+          <h2>Kid-Safe Mode</h2>
+          <p>
+            Tighten controls for children. Settings changes already require the
+            parent password.
+          </p>
+
+          <div class="switch-row">
+            <label style="margin:0; display:flex; align-items:center; gap:6px;">
+              <input id="kidModeToggle" type="checkbox">
+              Enable kid-safe mode
+            </label>
+            <span>Prevent casual tampering</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK LISTS -->
+    <div class="card">
+      <div class="grid">
+        <div>
+          <h2>Blocked Domains</h2>
+          <p>
+            One domain per line. Example: <code>youtube.com</code>, <code>instagram.com</code>.
+          </p>
+          <textarea id="domainBox" placeholder="youtube.com&#10;instagram.com"></textarea>
+          <div style="margin-top:8px;">
+            <button id="saveDomains">Save domains</button>
+          </div>
+        </div>
+
+        <div>
+          <h2>Adult Keywords</h2>
+          <p>
+            Page content matching these words will be blocked. One keyword or phrase per line.
+          </p>
+          <textarea id="keywordBox" placeholder="porn&#10;xxx&#10;nsfw"></textarea>
+          <div style="margin-top:8px;">
+            <button id="saveKeywords">Save keywords</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="card">
+      <h2>Parent Password</h2>
+      <p>
+        This password is required to change limits, lists, and to override blocked sites.
+      </p>
+
+      <label for="pwdInput">New parent password</label>
+      <div class="row-inline">
+        <input id="pwdInput" type="password" placeholder="Enter a secure password">
+        <button id="savePassword">Save password</button>
+      </div>
+
+      <div style="margin-top:8px;font-size:11px;color:#6b7280;">
+        Password is stored locally in your browser using <code>chrome.storage.local</code>.
+      </div>
+    </div>
+
+    <div id="status"></div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

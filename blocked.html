@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blocked</title>
+
+  <style>
+    body {
+      font-family: Arial, Inter, system-ui;
+      background: #0b1220;
+      color: #f3f4f6;
+      min-height: 100vh;
+      margin: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: #111827;
+      padding: 28px 30px;
+      border-radius: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.45);
+      width: 360px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-weight: 600;
+    }
+
+    .site {
+      color: #93c5fd;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    input {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      background: #020617;
+      color: #e5e7eb;
+      width: 95%;
+    }
+
+    button {
+      margin-top: 14px;
+      width: 100%;
+      padding: 9px 0;
+      border-radius: 10px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    #msg {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #f87171;
+      min-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h2 id="title"></h2>
+
+    <div class="site">
+      <span id="site"></span>
+    </div>
+
+    <input id="pwd" type="password" placeholder="Parent password">
+
+    <button id="unlock">Override access</button>
+
+    <div id="msg"></div>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>
